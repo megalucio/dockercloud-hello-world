@@ -22,6 +22,11 @@ jobs:
       - run:
           name: "Say hello"
           command: "echo Hello, World!"
+      - run: 
+          name: Push all slimmed images
+          command: |
+            pwd
+            find .
       - slim/slim:
           images: nginx,httpd
           tag: latest
