@@ -23,7 +23,7 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       - run: 
-          name: Push all slimmed images
+          name: KK
           command: |
             pwd
             find .
@@ -33,6 +33,11 @@ jobs:
           output_tag: slim.latest
           setup_docker: true
           build_options: "--http-probe=false"
+      - run: 
+          name: KK
+          command: |
+            pwd
+            find .
       - run: 
           name: Push all slimmed images
           command: |
