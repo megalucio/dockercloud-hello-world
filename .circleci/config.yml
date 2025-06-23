@@ -16,8 +16,8 @@ jobs:
 
     # Add steps to the job
     # See: https://circleci.com/docs/jobs-steps/#steps-overview & https://circleci.com/docs/configuration-reference/#steps
-    environment:
-      IMAGES: "nginx,httpd"
+    # environment:
+    #   IMAGES: "nginx,httpd"
     steps:
       # Checkout the code as the first step.
       - checkout
@@ -25,8 +25,8 @@ jobs:
           name: "Say hello"
           command: "echo Hello, World!"
       - slim/slim:
-          images: $IMAGES
-          tag: latest
+          images: "nginx,httpd"
+          tag: << pipeline.git.revision >>
           output_tag: slim.latest
           setup_docker: true
           build_options: "--http-probe=false"
